@@ -131,7 +131,6 @@ return array(
   'Key' => 'ແປ້ນພີມ',
   'Language' => 'ພາສາ',
   'Leave empty for generate auto' => 'ປ່ອຍຫວ່າງໄວ້ເພື່ອສ້າງອັດໂນມັດ',
-  'LINE official account (with @ prefix, e.g. @xxxx)' => 'ບັນຊີທາງການຂອງ LINE (ມີ @ ຄໍານໍາຫນ້າ, ເຊັ່ນ: @xxxx)',
   'LINE settings' => 'ຕັ້ງ​ຄ່າ LINE',
   'LINE_FOLLOW_MESSAGE' => 'ສະບາຍດີ, :name ນີ້ແມ່ນບັນຊີທາງການຂອງ :title ພວກເຮົາຈະສົ່ງຂ່າວໃຫ້ທ່ານຜ່ານຊ່ອງທາງນີ້.',
   'LINE_REPLY_MESSAGE' => 'ຂໍອະໄພ, ບໍ່ສາມາດຕອບກັບຂໍ້ຄວາມນີ້ໄດ້.',
