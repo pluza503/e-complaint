@@ -1,9 +1,18 @@
-<article id=login_div>
+<article id="login_div">
   <header id="logo" class="header_color">
-    <h1><a href="{WEBURL}index.php" title="{WEBTITLE}" class="{LOGO_CLASS}">{LOGO}</a></h1>
+    <h1>
+      <a href="{WEBURL}index.php" title="{WEBTITLE}" class="{LOGO_CLASS}"
+        >{LOGO}</a
+      >
+    </h1>
     <h3>{WEBDESCRIPTION}</h3>
   </header>
-  <form id=register_frm method=post autocomplete=off action="{WEBURL}index.php">
+  <form
+    id="register_frm"
+    method="post"
+    autocomplete="off"
+    action="{WEBURL}index.php"
+  >
     <h2 class="table fullwidth">
       <span class="td icon-register">{LNG_Register}</span>
       <!-- ปุ่มเปลี่ยนภาษา -->
@@ -13,48 +22,150 @@
     </h2>
     <fieldset>
       <label class="g-input icon-email">
-        <input type=text name=register_username id=register_username title="{LNG_Please fill in} {PLACEHOLDER}" maxlength=255 placeholder="{PLACEHOLDER}">
+        <input
+          type="text"
+          name="register_username"
+          id="register_username"
+          title="{LNG_Please fill in} {PLACEHOLDER}"
+          maxlength="255"
+          placeholder="{PLACEHOLDER}"
+        />
       </label>
       <label class="g-input icon-password">
-        <input class=showpassword type=password name=register_password id=register_password maxlength=50 title="{LNG_Password} {LNG_English lowercase letters and numbers, not less than 6 digits}" placeholder="{LNG_Password}">
+        <input
+          class="showpassword"
+          type="password"
+          name="register_password"
+          id="register_password"
+          maxlength="50"
+          title="{LNG_Password} {LNG_English lowercase letters and numbers, not less than 6 digits}"
+          placeholder="{LNG_Password}"
+        />
       </label>
       <label class="g-input icon-password">
-        <input class=showpassword type=password name=register_repassword id=register_repassword maxlength=50 title="{LNG_Enter your password again}" placeholder="{LNG_Confirm password}">
+        <input
+          class="showpassword"
+          type="password"
+          name="register_repassword"
+          id="register_repassword"
+          maxlength="50"
+          title="{LNG_Enter your password again}"
+          placeholder="{LNG_Confirm password}"
+        />
       </label>
       <label class="g-input icon-user">
-        <input type=text name=register_name id=register_name maxlength=150 title="{LNG_Please fill in} {LNG_Name}" placeholder="{LNG_Name}">
+        <input
+          type="text"
+          name="register_name"
+          id="register_name"
+          maxlength="150"
+          title="{LNG_Please fill in} {LNG_Name}"
+          placeholder="{LNG_Name}"
+        />
       </label>
       <label class="g-input icon-phone">
-        <input type=text name=register_phone id=register_phone maxlength=10 title="{LNG_Please fill in} {LNG_Phone}" placeholder="{LNG_Phone}" data-keyboard = "1234567890">
+        <input
+          type="text"
+          name="register_phone"
+          id="register_phone"
+          maxlength="10"
+          title="{LNG_Please fill in} {LNG_Phone}"
+          placeholder="{LNG_Phone}"
+          data-keyboard="1234567890"
+        />
       </label>
       <label class="g-input icon-line">
-        <input type=text name=register_line id=register_name maxlength=150 title="{LNG_Please fill in} {LNG_LINE official account}" placeholder="{LNG_LINE official account}">
+        <input
+          type="text"
+          name="register_line"
+          id="register_name"
+          maxlength="150"
+          title="{LNG_Please fill in} {LNG_LINE official account}"
+          placeholder="{LNG_LINE official account}"
+        />
       </label>
       <label class="g-input icon-addressbook">
-        <input type=text name=register_address id=register_address maxlength=150 title="{LNG_Please fill in} {LNG_Address details}" placeholder="{LNG_Address details}" >
+        <input
+          type="text"
+          name="register_address"
+          id="register_address"
+          maxlength="150"
+          title="{LNG_Please fill in} {LNG_Address details}"
+          placeholder="{LNG_Address details}"
+        />
       </label>
       <label class="g-input icon-address">
-        <input type=text name=register_province id=register_province maxlength=150 title="{LNG_Please fill in} {LNG_Province}" placeholder="{LNG_Province}" >
+        <input
+          type="text"
+          name="register_province"
+          id="register_province"
+          maxlength="150"
+          title="{LNG_Please fill in} {LNG_Province}"
+          placeholder="{LNG_Province}"
+        />
       </label>
       <label class="g-input icon-address">
-        <input type=text name=register_district id=register_district maxlength=150 title="{LNG_Please fill in} {LNG_Districts}" placeholder="{LNG_Districts}" >
+        <input
+          type="text"
+          name="register_district"
+          id="register_district"
+          maxlength="150"
+          title="{LNG_Please fill in} {LNG_Districts}"
+          placeholder="{LNG_Districts}"
+        />
       </label>
       <label class="g-input icon-address">
-        <input type=text name=register_subdistrict id=register_subdistrict maxlength=150 title="{LNG_Please fill in} {LNG_SubDistricts}" placeholder="{LNG_SubDistricts}" >
+        <input
+          type="text"
+          name="register_subdistrict"
+          id="register_subdistrict"
+          maxlength="150"
+          title="{LNG_Please fill in} {LNG_SubDistricts}"
+          placeholder="{LNG_SubDistricts}"
+        />
       </label>
       <label class="g-input icon-address">
-        <input type=text name=register_zipcode id=register_zipcode maxlength=150 title="{LNG_Please fill in} {LNG_Zipcode}" placeholder="{LNG_Zipcode}" >
+        <input
+          type="text"
+          name="register_zipcode"
+          id="register_zipcode"
+          maxlength="150"
+          title="{LNG_Please fill in} {LNG_Zipcode}"
+          placeholder="{LNG_Zipcode}"
+        />
+      </label>
+      <!-- <label class="g-input icon-address">
+        <input
+          type="text"
+          name="register_zipcode"
+          id="register_zipcode"
+          maxlength="150"
+          title="{LNG_Please fill in} {LNG_Zipcode}"
+          placeholder="{LNG_Zipcode}"
+        /> -->
       </label>
     </fieldset>
     <fieldset class="accept_term">
-      <label><input type="checkbox" id="accept_term">{LNG_Accept this agreement}<a href="{WEBURL}index.php?module=privacy">{LNG_Privacy Policy}</a></label> 
-      <button type=submit class="button login wide" id="register_submit" disabled>{LNG_Register}</button>
-      <input type="hidden" name="token" id="token" value="{TOKEN}">
+      <label
+        ><input type="checkbox" id="accept_term" />{LNG_Accept this agreement}<a
+          href="{WEBURL}index.php?module=privacy"
+          >{LNG_Privacy Policy}</a
+        ></label
+      >
+      <button
+        type="submit"
+        class="button login wide"
+        id="register_submit"
+        disabled
+      >
+        {LNG_Register}
+      </button>
+      <input type="hidden" name="token" id="token" value="{TOKEN}" />
     </fieldset>
-    <fieldset class="center">
-      {LOGINMENU}
-    </fieldset>
+    <fieldset class="center">{LOGINMENU}</fieldset>
   </form>
   {LOGIN_MESSAGE}
-  <script>initRegisterFrm();</script>
+  <script>
+    initRegisterFrm();
+  </script>
 </article>
