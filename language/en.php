@@ -24,7 +24,7 @@ return array(
     5 => 'Fr',
     6 => 'Sa'
   ),
-  'Inventory' => 'Inventory',
+  'Inventory' => 'agencies',
   'INVENTORY_CATEGORIES' => array(
     'category_id' => 'Category',
     'type_id' => 'Type',
