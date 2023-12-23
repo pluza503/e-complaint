@@ -37,12 +37,12 @@ class Controller extends \Kotchasan\KBase
             array(
                 'text' => '{LNG_Get a repair}',
                 'url' => 'index.php?module=repair-receive'
-                //'url' => 'index.php?'
+                // 'url' => 'index.php?' <<<< ปิดเมนูแจ้งเรื่องร้องเรียน comment บรรทัดบนออก
             ),
             array(
                 'text' => '{LNG_Repair history}',
                 'url' => 'index.php?module=repair-history'
-                //'url' => 'index.php?'
+                // 'url' => 'index.php?' <<<< ปิดเมนูติดตามเรื่องร้องเรียน comment บรรทัดบนออก
             )
         );
         // สามารถจัดการรายการซ่อมได้, ช่างซ่อม

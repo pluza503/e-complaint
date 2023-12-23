@@ -42,7 +42,7 @@ echo '<title>'.$title.'</title>';
 echo '<link rel=stylesheet href="../skin/gcss.css">';
 echo '<link rel=stylesheet href="../skin/fonts.css">';
 echo '<link rel=stylesheet href="./style.css">';
-echo '<link rel="shortcut icon" href="../favicon.ico">';
+echo '<link rel="shortcut icon" href="../Moph.ico">';
 echo '</head>';
 echo '<body>';
 echo '<main>';
