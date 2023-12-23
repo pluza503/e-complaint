@@ -164,11 +164,20 @@ class View extends \Gcms\View
         $groups->add('number', array(
             'id' => 'register_id_card',
             'labelClass' => 'g-input icon-profile',
-            'itemClass' => 'width50',
+            'itemClass' => 'width25',
             'label' => '{LNG_Identification No.}',
             'maxlength' => 13,
             'value' => $user['id_card'],
             'validator' => array('keyup,change', 'checkIdcard')
+        ));
+        // line_uid
+        $groups->add('text', array(
+            'id' => 'register_line_uid',
+            'itemClass' => 'width50',
+            'labelClass' => 'g-input icon-line',
+            'label' => '{LNG_LINE user ID}',
+            'maxlength' => 300,
+            'value' => $user['line_uid']
         ));
         // phone
         $groups->add('text', array(
@@ -190,14 +199,14 @@ class View extends \Gcms\View
         ));
         $groups = $fieldset->add('groups');
         // country
-        $groups->add('text', array(
-            'id' => 'register_country',
-            'labelClass' => 'g-input icon-world',
-            'itemClass' => 'width33',
-            'label' => '{LNG_Country}',
-            'datalist' => \Kotchasan\Country::all(),
-            'value' => $user['country']
-        ));
+        // $groups->add('text', array(
+        //     'id' => 'register_country',
+        //     'labelClass' => 'g-input icon-world',
+        //     'itemClass' => 'width33',
+        //     'label' => '{LNG_Country}',
+        //     'datalist' => \Kotchasan\Country::all(),
+        //     'value' => $user['country']
+        // ));
         // provinceID
         $groups->add('text', array(
             'id' => 'register_province',
@@ -205,9 +214,31 @@ class View extends \Gcms\View
             'labelClass' => 'g-input icon-location',
             'itemClass' => 'width33',
             'label' => '{LNG_Province}',
-            'datalist' => [],
+            'datalist' => \Kotchasan\Province::all('TH'),
             'text' => $user['province'],
             'value' => $user['provinceID']
+        ));
+        // districtID
+        $groups->add('text', array(
+            'id' => 'register_district',
+            'name' => 'register_district',
+            'labelClass' => 'g-input icon-location',
+            'itemClass' => 'width33',
+            'label' => '{LNG_Districts}',
+            'datalist' => [],
+            'text' => $user['district'],
+            'value' => $user['districtID']
+        ));
+        // SubDistrictsID
+        $groups->add('text', array(
+            'id' => 'register_subdistrict',
+            'name' => 'register_subdistrict',
+            'labelClass' => 'g-input icon-location',
+            'itemClass' => 'width33',
+            'label' => '{LNG_SubDistricts}',
+            'datalist' => [],
+            'text' => $user['subdistrictince'],
+            'value' => $user['subdistrictID']
         ));
         // zipcode
         $groups->add('number', array(
@@ -218,19 +249,8 @@ class View extends \Gcms\View
             'maxlength' => 10,
             'value' => $user['zipcode']
         ));
-        if (!empty(self::$cfg->line_official_account) && !empty(self::$cfg->line_channel_access_token) && $user['social'] != 3) {
-            // line_uid
-            $fieldset->add('text', array(
-                'id' => 'register_line_uid',
-                'itemClass' => 'item',
-                'labelClass' => 'g-input icon-line',
-                'label' => '{LNG_LINE user ID}',
-                'placeholder' => 'U1234abc...',
-                'comment' => '{LNG_Enter the LINE user ID you received when adding friends. Or type userId sent to the official account to request a new user ID. This information is used for receiving private messages from the system via LINE.}',
-                'maxlength' => 33,
-                'value' => $user['line_uid']
-            ));
-        }
+        
+        
         // avatar
         if (is_file(ROOT_PATH.DATA_FOLDER.'avatar/'.$user['id'].'.jpg')) {
             $img = WEB_URL.DATA_FOLDER.'avatar/'.$user['id'].'.jpg?'.time();

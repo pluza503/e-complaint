@@ -37,16 +37,18 @@ class Controller extends \Kotchasan\KBase
             array(
                 'text' => '{LNG_Get a repair}',
                 'url' => 'index.php?module=repair-receive'
+                //'url' => 'index.php?'
             ),
             array(
                 'text' => '{LNG_Repair history}',
                 'url' => 'index.php?module=repair-history'
+                //'url' => 'index.php?'
             )
         );
         // สามารถจัดการรายการซ่อมได้, ช่างซ่อม
         if (Login::checkPermission($login, array('can_manage_repair', 'can_repair'))) {
             $submenus[] = array(
-                'text' => '{LNG_Repair list} ({LNG_Repairman})',
+                'text' => '{LNG_Repair list} ',
                 'url' => 'index.php?module=repair-setup'
             );
         }

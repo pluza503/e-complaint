@@ -100,11 +100,16 @@ class View extends \Gcms\View
         $template->add(array(
             '/%NAME%/' => $index->name,
             '/%PHONE%/' => $index->phone,
+            '/%LINE%/' => $index->line,
             '/%TOPIC%/' => $index->topic,
-            '/%PRODUCT_NO%/' => base64_encode(\Kotchasan\Barcode::create($index->product_no, 30, 9)->toPng()),
+            '/%PRODUCT_NO%/' => $index->product_no,
+            '/%FILE%/' => base64_encode(\Kotchasan\Barcode::create($index->product_no, 30, 9)->toPng()),
             '/%JOB_DESCRIPTION%/' => nl2br($index->job_description),
             '/%CREATE_DATE%/' => Date::format($index->create_date, 'd M Y'),
+            '/%DATE%/' => Date::format($index->create_date, 'd M Y'),
+            '/%TIME%/' => Date::format($index->create_date, 'H : i'),
             '/%COMMENT%/' => $index->comment,
+            '/%AGENCY%/' => $index->agency,
             '/%DETAILS%/' => $table->render()
         ));
         // คืนค่า HTML

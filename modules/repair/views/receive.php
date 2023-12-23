@@ -11,6 +11,7 @@
 namespace Repair\Receive;
 
 use Kotchasan\Html;
+use Kotchasan\Language;
 
 /**
  * module=repair-receive
@@ -45,25 +46,66 @@ class View extends \Gcms\View
             'title' => '{LNG_Repair job description}'
         ));
         $groups = $fieldset->add('groups', array(
-            'comment' => '{LNG_Find equipment by} {LNG_Equipment}, {LNG_Serial/Registration No.}'
+            //'comment' => '{LNG_Find equipment by} {LNG_Equipment}, {LNG_Serial/Registration No.}'
         ));
-        // product_no
+        // type
         $groups->add('text', array(
             'id' => 'product_no',
-            'labelClass' => 'g-input icon-barcode',
+            'labelClass' => 'g-input icon-template',
             'itemClass' => 'width50',
-            'label' => '{LNG_Serial/Registration No.}',
+            'label' => '{LNG_complain_type}',
             'maxlength' => 20,
             'value' => $index->product_no
         ));
-        // topic
+        // suptype
         $groups->add('text', array(
             'id' => 'topic',
             'labelClass' => 'g-input icon-edit',
             'itemClass' => 'width50',
-            'label' => '{LNG_Equipment}',
+            'label' => '{LNG_complain_suptype}',
             'maxlength' => 64,
             'value' => $index->topic
+        ));
+        // complainant_type
+        $fieldset->add('date', array(
+            'id' => 'complainant_type',
+            'labelClass' => 'g-input icon-menus',
+            'itemClass' => 'item',
+            'label' => '{LNG_complainant_type}',
+            'options' => Language::get('Complainant_detail'),
+            'value' => $user['sex']
+        ));
+
+        $groups = $fieldset->add('groups', array(
+            //'comment' => '{LNG_Find equipment by} {LNG_Equipment}, {LNG_Serial/Registration No.}'
+        ));
+        // date
+        $groups->add('date', array(
+            'id' => 'topic',
+            'labelClass' => 'g-input icon-calendar',
+            'itemClass' => 'width50',
+            'label' => '{LNG_Date}',
+            //'maxlength' => 64,
+            //'value' => $index->topic
+        ));
+        // time
+        $groups->add('time', array(
+            'id' => 'topic',
+            'labelClass' => 'g-input icon-clock',
+            'itemClass' => 'width50',
+            'label' => '{LNG_Time}',
+            //maxlength' => 64,
+            //'value' => $index->topic
+        ));
+
+        
+        $fieldset->add('text', array(
+            'id' => 'product_no',
+            'labelClass' => 'g-input icon-home',
+            'itemClass' => 'item',
+            'label' => '{LNG_Agency_name}',
+            'maxlength' => 20,
+            'value' => $index->product_no
         ));
         // job_description
         $fieldset->add('textarea', array(
@@ -74,14 +116,24 @@ class View extends \Gcms\View
             'rows' => 5,
             'value' => $index->job_description
         ));
+
+        $fieldset->add('text', array(
+            'id' => 'product_no',
+            'labelClass' => 'g-input icon-create-folder',
+            'itemClass' => 'item',
+            'label' => '{LNG_Requirement}',
+            'maxlength' => 20,
+            'value' => $index->product_no
+        ));
+
         if ($index->id == 0) {
             // comment
             $fieldset->add('text', array(
                 'id' => 'comment',
                 'labelClass' => 'g-input icon-comments',
                 'itemClass' => 'item',
-                'label' => '{LNG_Comment}',
-                'comment' => '{LNG_Note or additional notes}',
+                'label' => '{LNG_Solution}',
+                //'comment' => '{LNG_Note or additional notes}',
                 'maxlength' => 255,
                 'value' => $index->comment
             ));
@@ -91,6 +143,20 @@ class View extends \Gcms\View
                 'value' => $index->status_id
             ));
         }
+
+        $fieldset->add('file', array(
+            'id' => 'avatar',
+            'labelClass' => 'g-input icon-pdf',
+            'itemClass' => 'item',
+            'label' => '{LNG_add_file}',
+            'comment' => '{LNG_Browse file uploaded, type :type}',
+            'dataPreview' => 'avatarImage',
+            'previewSrc' => $img,
+            'accept' => self::$cfg->member_file_typies
+        ));
+        \Gcms\Controller::$view->setContentsAfter(array(
+            '/:type/' => implode(', ', self::$cfg->member_file_typies)
+        ));
         $fieldset = $form->add('fieldset', array(
             'class' => 'submit'
         ));

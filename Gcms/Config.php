@@ -279,4 +279,11 @@ class Config extends \Kotchasan\Config
      * @var array
      */
     public $inventory_img_typies = ['jpg', 'jpeg', 'png'];
+    /**
+    * ชนิดของไฟล์ที่รองรับ
+    *
+    * @var array
+    */
+    public $member_file_typies = ['all'];
+    
 }

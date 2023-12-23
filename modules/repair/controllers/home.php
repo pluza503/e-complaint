@@ -33,9 +33,9 @@ class Controller extends \Kotchasan\KBase
         if ($login) {
             $datas = \Repair\Home\Model::getNew($login);
             if ($datas->isStaff) {
-                \Index\Home\Controller::renderCard($card, 'icon-tools', '{LNG_Repair list}', number_format($datas->count), '{LNG_Job today}', 'index.php?module=repair-setup'.(isset(self::$cfg->repair_first_status) ? '&amp;status='.self::$cfg->repair_first_status : ''));
+                \Index\Home\Controller::renderCard($card, 'icon-forum', '{LNG_Repair list}', number_format($datas->count), '{LNG_Job today}', 'index.php?module=repair-setup'.(isset(self::$cfg->repair_first_status) ? '&amp;status='.self::$cfg->repair_first_status : ''));
             } else {
-                \Index\Home\Controller::renderCard($card, 'icon-tools', '{LNG_Repair list}', number_format($datas->count), '{LNG_Job today}', 'index.php?module=repair-history');
+                \Index\Home\Controller::renderCard($card, 'icon-forum', '{LNG_Repair list}', number_format($datas->count), '{LNG_Job today}', 'index.php?module=repair-history');
             }
         }
     }
